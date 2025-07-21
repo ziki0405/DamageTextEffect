@@ -15,14 +15,14 @@ RPG游戏伤害飘字动画
 
 挂载脚本：
 将 DamageTextEffect.cs 脚本挂载到 DamageTextPrefab 上（与 TextMeshProUGUI 同级或父物体）。
-在代码中实例化飘字
+
+在代码中使用飘字的案例
 // 以 Canvas 为父对象实例化
-   GameObject dmgText = Instantiate(damageTextPrefab, screenPos, Quaternion.identity, canvas.transform);
-   var text = dmgText.GetComponentInChildren<TextMeshProUGUI>();
-   if (text != null)
-       text.text = amount.ToString();
-   // DamageTextEffect 脚本会自动播放动画并销毁自己
-脚本会自动播放动画并销毁自己
+GameObject dmgText = Instantiate(damageTextPrefab, screenPos, Quaternion.identity, canvas.transform);
+var text = dmgText.GetComponentInChildren<TextMeshProUGUI>();
+if (text != null)
+text.text = amount.ToString();
+// DamageTextEffect 脚本会自动播放动画并销毁自己
 
 参数调整：
 在 Inspector 面板可调整：
